@@ -22,5 +22,5 @@ Requirements:
 ### Todos
 
  - Add function to fetch proxies
- - Handle 'This site can’t be reached'/ 'No Internet' errors
+ - ~~Handle 'This site can’t be reached'/ 'No Internet' errors~~
  
