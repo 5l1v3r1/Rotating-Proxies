@@ -15,6 +15,7 @@ Requirements:
  git clone https://github.com/pijus-r/Rotating-Proxies.git
  cd Rotating-Proxies
  sudo pip3 install selenium colorama pyfiglet
+ # Add Selenium code in rotating_proxies.py
  python3 rotating_proxies.py 
 ```
 
