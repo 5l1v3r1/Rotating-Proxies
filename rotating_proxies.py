@@ -1,9 +1,11 @@
 from selenium import webdriver
 import time
 from selenium.webdriver.common.proxy import Proxy, ProxyType
+from selenium.common.exceptions import TimeoutException
 import random
 from colorama import Fore, Back, Style
 import pyfiglet
+
 
 ascii_banner = pyfiglet.figlet_format("Rotating Proxies")
 print(ascii_banner)
@@ -37,24 +39,27 @@ for prox in converted_proxies:
 
     }
     options = webdriver.ChromeOptions()
+    options.add_argument('start-maximized')
+    options.add_argument('--no-sandbox')
     options.add_argument('--ignore-ssl-errors=yes')
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--allow-insecure-localhost')
     driver = webdriver.Chrome(options=options)
-
-
-
-
-    #SELENIUM CODE
-    #driver.get('https://www.google.com/')
-
-
-
-
-
-    time.sleep(3)
+    driver.set_page_load_timeout(80)
     index = converted_proxies.index(prox)
-    print('Used:', index + 1 ,'/ ',len(converted_proxies))
-    driver.quit()
+    try:
+        driver.get('https://www.google.com/')
+        
+        
+         #SELENIUM CODE
+            
+            
+        time.sleep(3)
+        print('Used:', index + 1 ,'/ ',len(converted_proxies))
+        driver.quit()
+    except TimeoutException:
+        print('TimeoutException','/ ',len(converted_proxies))
+        driver.quit()
+
 
 print('Done.')
