@@ -28,7 +28,7 @@ for element in proxy_array:
     converted_proxies.append(element.strip())
 
 
-print(Fore.WHITE +'Proxies are ready for automated testing.\n\nInitiating...')
+print(Fore.WHITE + 'Proxies are ready for automated testing.\n\nInitiating...')
 
 
 for prox in converted_proxies:
@@ -72,4 +72,4 @@ for prox in converted_proxies:
         driver.quit()
 
 
-print('Done.')
+print(Fore.WHITE + 'Done.')
