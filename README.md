@@ -23,8 +23,3 @@ Requirements:
 
  - Add function to fetch proxies
  
-
-License
-----
-
-MIT
